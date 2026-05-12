@@ -204,6 +204,10 @@ type HostLeaseStatus struct {
 	NetworkInterfaces []NetworkInterfaceStatus `json:"networkInterfaces,omitempty"`
 	// Provisioning holds current provisioning URL and state from the backend.
 	Provisioning ProvisionStatus `json:"provisioning,omitempty"`
+        // DesiredConfigVersion is a hash of the current spec, used to detect spec changes
+	// that require re-provisioning.
+	// +kubebuilder:validation:Optional
+	DesiredConfigVersion string `json:"desiredConfigVersion,omitempty"`
 }
 
 // NetworkInterfaceStatus describes an observed network interface.

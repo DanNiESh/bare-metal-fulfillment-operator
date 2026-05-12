@@ -234,6 +234,11 @@ spec:
                   - type
                   type: object
                 type: array
+              desiredConfigVersion:
+                description: |-
+                  DesiredConfigVersion is a hash of the current spec, used to detect spec changes
+                  that require re-provisioning.
+                type: string
               jobs:
                 description: |-
                   Jobs tracks the history of provision and deprovision operations
